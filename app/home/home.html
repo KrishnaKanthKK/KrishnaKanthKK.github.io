@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="home/home.css">
+<div layout="row" layout-align="space-around center" layout-margin layout-padding>
+    <img src="assets/waylo_chat.png">
+    <span flex></span>
+    <div layout="column" layout-align="start start" layout-margin layout-padding>
+        <span ng-if="abTest" class="md-display-2">Know when to book hotel stays</span>
+        <span ng-if="!abTest" class="md-display-1">Book hotel stay at lowest possible price before check-in</span>
+        <span class="md-subtitle">Get notified when hotel prices drop</span>
+        <md-divider class="cmd-divider"></md-divider>
+
+        <div layout="row" layout-align="start start" layout-padding layout-margin>
+            <md-button href="https://m.me/theWaylo" target="_blank" md-no-ink md-no-focus-style class="md-accent md-raised md-hue-1 cmd-button">
+                <div ng-cloak layout="row" layout-align="start start">
+                    <img src="assets/facebook-messenger.png" style="margin-right:1em">
+                    <span class="md-body-2 cmd-button-text" ng-cloak>CHAT WITH WAYLO</span>
+                </div>
+            </md-button>
+            <span>or</span>
+            <a style="color: #212121" href="https://www.youtube.com/embed/ozxyz358Zfw" target="_blank">Watch a Video</a>
+        </div>
+    </div>
+</div>

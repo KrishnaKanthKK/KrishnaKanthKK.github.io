@@ -1,0 +1,13 @@
+.cmd-divider{
+    width: 20%;
+}
+
+.cmd-button{
+    border-radius: 0.5em;
+}
+
+.cmd-button-text{
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    margin: 0px
+}

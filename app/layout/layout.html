@@ -1,0 +1,20 @@
+<div layout="row" layout-align="space-between start" layout-padding layout-margin>
+    <md-button ng-cloak class="md-accent" md-no-ink ng-click="goToHome()">
+        <img src="assets/waylo-logo.png">
+    </md-button>
+
+    <!-- md-selected sets the active tab -->
+    <md-toolbar layout-align="space-around end" md-scroll-shrink="false" ng-cloak class="md-primary md-tall">
+        <md-tabs md-no-ink ng-cloak class="md-primary" md-center-tabs md-dynamic-height md-selected="states.indexOf(state.current.name)">
+            <md-tab ng-cloak label="HOME" ui-sref=".home"></md-tab>
+            <md-tab ng-cloak label="CAREERS" ui-sref=".careers"></md-tab>
+            <md-tab ng-cloak label="BLOG" ui-sref=".blog"></md-tab>
+            <md-tab ng-cloak label="CONTACT" ui-sref=".contact"></md-tab>
+        </md-tabs>
+    </md-toolbar>
+
+</div>
+
+
+
+
