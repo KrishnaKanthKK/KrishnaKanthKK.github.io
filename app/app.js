@@ -124,33 +124,39 @@ myApp.config(function ($mdThemingProvider) {
         .backgroundPalette('customBackground')
 });
 
-myApp.run(function($rootScope, $window, $state, $location) {
+myApp.run(function($rootScope, $window, $state, $stateParams) {
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+
+    //Listening to change in state to change the active tab
     $rootScope.$on( "$stateChangeStart", function(event, next, current) {
+        
+        //Changing the active tab according to the state
+        var states = ['home', 'careers', 'blog', 'contact'];
+        $rootScope.selectedTab = states.indexOf(next.name);
 
-        //abTest variable is set for the first time when they visit the website. abTest is used in home.html for abTesting
-        $rootScope.abTest = $window.localStorage.getItem('abTest');
-        if ($rootScope.abTest) {
-            return
-        }else{
-            var randomNumber = Math.floor(Math.random()*2);
-            if(randomNumber){
-                $window.localStorage.setItem('abTest', 1);
-            }else{
-                $window.localStorage.setItem('abTest', 0);
-            }
-        }
     });
+
+    //abTest variable is set for the first time when they visit the website. abTest is used in home.html for abTesting
+    $rootScope.abTest = $window.localStorage.getItem('abTest');
+    if ($rootScope.abTest) {
+        return
+    }else{
+        var randomNumber = Math.floor(Math.random()*2);
+        if(randomNumber){
+            $window.localStorage.setItem('abTest', 1);
+        }else{
+            $window.localStorage.setItem('abTest', 0);
+        }
+        $rootScope.abTest = $window.localStorage.getItem('abTest');
+    }
 });
 
+myApp.controller('MainCtrl',['$state', '$stateParams', '$scope', '$rootScope', function ($state, $stateParams, $scope, $rootScope) {
 
-myApp.controller('MainCtrl', function ($state, $stateParams, $scope, $rootScope) {
-
-    //To home to home when logo is clicked
+    //To home when logo is clicked
     $scope.goToHome = function () {
-        $state.go('home');
+        $state.go('home');              //Going to home state
     };
-
-    //To make the correct tab active by checking which state it's in
-    $rootScope.states = ['home', 'careers', 'blog', 'contact'];
-    $rootScope.state = $state;
-});
+}]);

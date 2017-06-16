@@ -5,7 +5,7 @@
 
     <!-- md-selected sets the active tab -->
     <md-toolbar layout-align="space-around end" md-scroll-shrink="false" ng-cloak class="md-primary md-tall">
-        <md-tabs md-no-ink ng-cloak class="md-primary" md-center-tabs md-dynamic-height md-selected="states.indexOf(state.current.name)">
+        <md-tabs md-no-ink ng-cloak class="md-primary" md-center-tabs md-dynamic-height md-selected="$root.selectedTab">
             <md-tab ng-cloak label="HOME" ui-sref=".home"></md-tab>
             <md-tab ng-cloak label="CAREERS" ui-sref=".careers"></md-tab>
             <md-tab ng-cloak label="BLOG" ui-sref=".blog"></md-tab>

@@ -3,8 +3,8 @@
     <img src="assets/waylo_chat.png">
     <span flex></span>
     <div layout="column" layout-align="start start" layout-margin layout-padding>
-        <span ng-if="abTest" class="md-display-2">Know when to book hotel stays</span>
-        <span ng-if="!abTest" class="md-display-1">Book hotel stay at lowest possible price before check-in</span>
+        <span ng-if="abTest==1" class="md-display-2">Know when to book hotel stays</span>
+        <span ng-if="abTest==0" class="md-display-1">Book hotel stay at lowest possible price before check-in</span>
         <span class="md-subtitle">Get notified when hotel prices drop</span>
         <md-divider class="cmd-divider"></md-divider>
 
